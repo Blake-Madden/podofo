@@ -109,7 +109,7 @@ namespace PoDoFo
         /**
          *  Enable/disable spellchecking for this text field
          *
-         *  \param spellCheck if true spellchecking will be enabled
+         *  \param spellcheck if true spellchecking will be enabled
          *
          *  Text fields are spellchecked by default
          */

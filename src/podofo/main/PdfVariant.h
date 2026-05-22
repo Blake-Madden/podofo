@@ -74,7 +74,7 @@ public:
     PdfVariant(const PdfName& name);
 
     /** Construct a PdfVariant that is a name.
-     *  \param ref the value of the name
+     *  \param ref the value of the reference
      */
     PdfVariant(const PdfReference& ref);
 
@@ -240,7 +240,7 @@ public:
     bool TryGetDictionary(PdfDictionary*& dict);
 
     /** Set the value of this object as bool
-     *  \param b the value as bool.
+     *  \param value the value as bool.
      *
      *  This will set the dirty flag of this object.
      *  \see IsDirty
@@ -248,7 +248,7 @@ public:
     void SetBool(bool value);
 
     /** Set the value of this object as int64_t
-     *  \param l the value as int64_t.
+     *  \param value the value as int64_t.
      *
      *  This will set the dirty flag of this object.
      *  \see IsDirty
@@ -256,7 +256,7 @@ public:
     void SetNumber(int64_t value);
 
     /** Set the value of this object as double
-     *  \param d the value as double.
+     *  \param value the value as double.
      *
      *  This will set the dirty flag of this object.
      *  \see IsDirty
@@ -264,7 +264,7 @@ public:
     void SetReal(double value);
 
     /** Set the name value of this object
-    *  \param d the name value
+    *  \param name the name value
     *
     *  This will set the dirty flag of this object.
     *  \see IsDirty

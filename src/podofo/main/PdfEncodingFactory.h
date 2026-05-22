@@ -22,7 +22,7 @@ public:
      *  encoding name or an encoding dictionary.
      *
      *  \param fontObj font object
-     *  \param toUnicode the optional ToUnicode dictionary
+     *  \param metrics the font metrics
      *
      *  \returns a PdfEncoding or nullptr
      */

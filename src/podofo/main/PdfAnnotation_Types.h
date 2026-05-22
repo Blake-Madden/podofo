@@ -216,7 +216,7 @@ namespace PoDoFo {
     public:
         /** Sets whether this annotation is initially open.
          *  You should always set this true for popup annotations.
-         *  \param b if true open it
+         *  \param value if true open it
          */
         void SetOpen(const nullable<bool>& value);
 
@@ -303,7 +303,7 @@ namespace PoDoFo {
     public:
         /** Sets whether this annotation is initially open.
          *  You should always set this true for popup annotations.
-         *  \param b if true open it
+         *  \param value if true open it
          */
         void SetOpen(const nullable<bool>& value);
 

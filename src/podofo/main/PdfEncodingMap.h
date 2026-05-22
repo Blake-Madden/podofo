@@ -56,6 +56,7 @@ public:
     /**
      * Get the char code from a span of unicode code points
      * \param codePoints it can be a single code point or a ligature
+     * \param codeUnit the character code unit
      * \return true if the code points match a character code
      */
     bool TryGetCharCode(const unicodeview& codePoints, PdfCharCode& codeUnit) const;

@@ -55,7 +55,7 @@ namespace PoDoFo
         nullable<const PdfString&> GetSubject() const;
 
         /** Get the raw keywords of the document
-         *  \returns the subject
+         *  \returns the keywords
          */
         nullable<const PdfString&> GetKeywordsRaw() const;
 

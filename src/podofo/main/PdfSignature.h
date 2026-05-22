@@ -87,25 +87,25 @@ public:
 
     /** Get the signer name
     *
-    *  \returns the found signer object
+    *  \returns the signer name
     */
     nullable<const PdfString&> GetSignerName() const;
 
     /** Get the reason of the signature
     *
-    *  \returns the found reason object
+    *  \returns the reason of the signature
     */
     nullable<const PdfString&> GetSignatureReason() const;
 
     /** Get the location of the signature
     *
-    *  \returns the found location object
+    *  \returns the location of the signature
     */
     nullable<const PdfString&> GetSignatureLocation() const;
 
     /** Get the date of the signature
     *
-    *  \returns the found date object
+    *  \returns the date of the signature
     */
     nullable<PdfDate> GetSignatureDate() const;
 
@@ -139,7 +139,7 @@ private:
      *
      * \param filter /Filter for this signature
      * \param subFilter /SubFilter for this signature
-     * \param subFilter /Type for this signature
+     * \param type /Type for this signature
      * \param beacons Shared sentinels that will updated
      *                during writing of the document
      */

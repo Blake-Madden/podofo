@@ -129,6 +129,7 @@ public:
         const PdfName& state = { }, bool skipSelectedState = false);
 
     /** Get a list of qualified appearance streams
+     *  \param states a vector to receive the appearance streams
      */
     void GetAppearanceStreams(std::vector<PdfAppearanceStream>& states) const;
 
@@ -184,7 +185,7 @@ public:
 
     /** Set the annotations border style.
      *  \param hCorner horizontal corner radius
-     *  \param dVCorner vertical corner radius
+     *  \param vCorner vertical corner radius
      *  \param width width of border
      *  \param strokeStyle a custom stroke style pattern
      */
@@ -224,12 +225,16 @@ public:
     /** Get the color key of the Annotation dictionary
      *  which defines the color of the annotation,
      *  as per 8.4 of the pdf spec.
+     *
+     *  \returns the color of the annotation
      */
 
     PdfColor GetColor() const;
 
     /** Set the C key of the Annotation dictionary, which defines the
      *  color of the annotation, as per 8.4 of the pdf spec.
+     *
+     *  \param color the color of the annotation
      */
     void SetColor(nullable<const PdfColor&> color);
 

@@ -185,7 +185,7 @@ public:
     void SetRenderingMode(PdfTextRenderingMode mode);
 
     /** Set the text spacing (operator Tw)
-     *  \param fWordSpace word spacing in PDF units
+     *  \param matrix the text matrix
      */
     void SetMatrix(const Matrix& matrix);
 
@@ -247,8 +247,6 @@ class PODOFO_API PdfPainter final : public PdfContentStreamOperators
 
 public:
     /** Create a new PdfPainter object.
-     *
-     *  \param saveRestore do save/restore state before appending
      */
     PdfPainter();
 
@@ -260,7 +258,8 @@ public:
      *
      *  Calls FinishPage() on the last page if it was not yet called.
      *
-     *  \param page a PdfCanvas object (most likely a PdfPage or PdfXObject).
+     *  \param canvas a PdfCanvas object (most likely a PdfPage or PdfXObject).
+     *  \param flags flags for the painting session
      *
      *  \see PdfPage \see PdfXObject
      *  \see FinishPage()
@@ -275,15 +274,13 @@ public:
 
     /** Set the stoke style for all stroking operations.
      *  \param strokeStyle style of the stroking operations
-     *  \param custom a custom stroking style which is used when
-     *                   strokeStyle == PdfStrokeStyle::Custom.
-      *  \param inverted inverted dash style (gaps for drawn spaces),
-      *                  it is ignored for None, Solid and Custom styles
-      *  \param scale scale factor of the stroke style
-      *                  it is ignored for None, Solid and Custom styles
-      *  \param subtractJoinCap if true, subtracts scaled width on filled parts,
-      *                       thus the line capability still draws into the cell;
-      *                        is used only if scale is not 1.0
+     *  \param inverted inverted dash style (gaps for drawn spaces),
+     *                  it is ignored for None, Solid and Custom styles
+     *  \param scale scale factor of the stroke style
+     *                  it is ignored for None, Solid and Custom styles
+     *  \param subtractJoinCap if true, subtracts scaled width on filled parts,
+     *                       thus the line capability still draws into the cell;
+     *                        is used only if scale is not 1.0
      *
      *  Possible values:
      *    PdfStrokeStyle::None
@@ -329,7 +326,7 @@ public:
      *  \param x3 x coordinate of the second control point
      *  \param y3 y coordinate of the second control point
      *  \param x4 x coordinate of the end point, which is the new current point
-     *  \param y5 y coordinate of the end point, which is the new current point
+     *  \param y4 y coordinate of the end point, which is the new current point
      */
     void DrawCubicBezier(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4);
 
@@ -426,9 +423,9 @@ public:
         PdfDrawTextStyle style = PdfDrawTextStyle::Regular);
 
     /** Draw an image on the current page.
+     *  \param obj the image object
      *  \param x the x coordinate (left position of the image)
      *  \param y the y coordinate (bottom position of the image)
-     *  \param obj an PdfXObject
      *  \param scaleX option scaling factor in x direction
      *  \param scaleY option scaling factor in y direction
      */
@@ -436,9 +433,9 @@ public:
 
     /** Draw an XObject on the current page. For PdfImage use DrawImage.
      *
+     *  \param obj the XObject
      *  \param x the x coordinate (left position of the XObject)
      *  \param y the y coordinate (bottom position of the XObject)
-     *  \param obj an PdfXObject
      *  \param scaleX option scaling factor in x direction
      *  \param scaleY option scaling factor in y direction
      *

@@ -48,7 +48,7 @@ public:
     /** Set the value of the NeedAppearances key in the interactive forms
      *  dictionary.
      *
-     *  \param bNeedAppearances A flag specifying whether to construct appearance streams
+     *  \param needAppearances A flag specifying whether to construct appearance streams
      *                          and appearance dictionaries for all widget annotations in
      *                          the document. Default value is false.
      */
@@ -64,6 +64,8 @@ public:
     bool GetNeedAppearances() const;
 
     /** Get the value of the /SigFlags document-level characteristics related to signature fields
+     *
+     *  \returns The signature flags.
      */
     PdfAcroFormSigFlags GetSigFlags() const;
 
@@ -77,7 +79,7 @@ public:
      *
      *  \returns a field object. The field object is owned by the PdfAcroForm.
      *
-     *  \see GetAnnotationCount
+     *  \see GetFieldCount
      */
     PdfField& GetFieldAt(unsigned index);
 

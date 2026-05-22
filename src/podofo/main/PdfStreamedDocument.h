@@ -93,14 +93,10 @@ protected:
     void SetPdfVersion(PdfVersion version) override;
 
 private:
-    /** Initialize the PdfStreamedDocument with an output device
-     *  \param device write to this device
+    /** Initialize the PdfStreamedDocument.
      *  \param version the PDF version of the document to write.
      *                  The PDF version can only be set in the constructor
      *                  as it is the first item written to the document on disk.
-     *  \param encrypt pointer to an encryption object or nullptr. If not nullptr
-     *                  the PdfEncrypt object will be copied and used to encrypt the
-     *                  created document.
      *  \param opts additional options for writing the pdf
      */
     void init(PdfVersion version, PdfSaveOptions opts);

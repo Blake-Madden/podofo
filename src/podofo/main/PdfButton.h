@@ -80,14 +80,14 @@ namespace PoDoFo
         /** Set the appearance stream which is displayed when the checkbox
          *  is checked.
          *
-         *  \param rXObject an xobject which contains the drawing commands for a checked checkbox
+         *  \param xobj an xobject which contains the drawing commands for a checked checkbox
          */
         void SetAppearanceChecked(const PdfXObject& xobj);
 
         /** Set the appearance stream which is displayed when the checkbox
          *  is unchecked.
          *
-         *  \param rXObject an xobject which contains the drawing commands for an unchecked checkbox
+         *  \param xobj an xobject which contains the drawing commands for an unchecked checkbox
          */
         void SetAppearanceUnchecked(const PdfXObject& xobj);
     };

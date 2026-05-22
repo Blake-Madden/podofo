@@ -209,14 +209,22 @@ public:
     /**
      * Resize the internal vector.
      * \param count new size
-     * \param value reference value
+     * \param val reference value
      */
     void Resize(unsigned count, const PdfObject& val = PdfObject());
 
     void Reserve(unsigned n);
 
+    /** Swap two elements in the array.
+     * \param atIndex index of the first element to swap
+     * \param toIndex index of the second element to swap
+     */
     void SwapAt(unsigned atIndex, unsigned toIndex);
 
+    /** Move an element to a new position.
+     * \param atIndex index of the element to move
+     * \param toIndex new index position for the element
+     */
     void MoveTo(unsigned atIndex, unsigned toIndex);
 
 public:

@@ -60,6 +60,7 @@ public:
 
     /** Get the glyph count with the given glyph access
      *  \param access the desired access for retrieving the glyph count
+     *  \returns the glyph count
      */
     unsigned GetGlyphCount(PdfGlyphAccess access) const;
 
@@ -70,6 +71,13 @@ public:
      *  \returns the width of a single glyph id
      */
     double GetGlyphWidth(unsigned gid) const;
+
+    /** Try to get the width of a single glyph id.
+     *
+     *  \param gid id of the glyph
+     *  \param width output width
+     *  \returns true if the width was successfully retrieved
+     */
     bool TryGetGlyphWidth(unsigned gid, double& width) const;
 
     /** Get the width of a single glyph id
@@ -79,6 +87,14 @@ public:
      *  \returns the width of a single glyph id
      */
     double GetGlyphWidth(unsigned gid, PdfGlyphAccess access) const;
+
+    /** Try to get the width of a single glyph id
+     *
+     *  \param gid id of the glyph
+     *  \param access the desired access for retrieving the metrics
+     *  \param width output width
+     *  \returns true if the width was successfully retrieved
+     */
     bool TryGetGlyphWidth(unsigned gid, PdfGlyphAccess access, double& width) const;
 
     /**
@@ -210,7 +226,7 @@ public:
 
     /** Create the bounding box vector in PDF units
      *
-     *  \param bbox write the bounding box to this vector
+     *  \param value write the bounding box to this vector
      */
     virtual bool TryGetBoundingBox(Corners& value) const = 0;
     Corners GetBoundingBox() const;

@@ -87,9 +87,9 @@ namespace PoDoFo {
         /** Create count new page objects and insert at the index atIndex. This is significantly faster
          *  than calling CreatePageAt repeatedly.
          *
-         *  \param size a Rect specifying the size of the page (i.e the /MediaBox key) in PDF units
+         *  \param atIndex index where to insert the new pages (0-based)
          *  \param count number of pages to create
-         *  \param atIndex index where to insert the new page (0-based)
+         *  \param size a Rect specifying the size of the page (i.e the /MediaBox key) in PDF units
          */
         void CreatePagesAt(unsigned atIndex, unsigned count, const nullable<Rect>& size = nullptr);
         void CreatePagesAt(unsigned atIndex, unsigned count, PdfPageSize pageSize);
@@ -101,7 +101,7 @@ namespace PoDoFo {
 
         /** Copies one or more pages from another PdfMemDocument to this document
          *  \param doc the document to append
-         *  \param atIndex the first page number to copy (0-based)
+         *  \param pageIndex the first page number to copy (0-based)
          *  \param pageCount the number of pages to copy
          */
         void AppendDocumentPages(const PdfDocument& doc, unsigned pageIndex, unsigned pageCount);

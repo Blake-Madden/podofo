@@ -72,7 +72,6 @@ public:
 
     /** Set hex-encoded data as the strings data.
      *  \param hexView must be hex-encoded data.
-     *  \param len   length of the hex-encoded data.
      *  \param encrypt if !nullptr, assume the hex data is encrypted and should be decrypted after hex-decoding.
      */
     static PdfString FromHexData(const std::string_view& hexView, const PdfStatefulEncrypt* encrypt = { });
@@ -155,12 +154,11 @@ private:
     // Delete constructor with nullptr
     PdfString(std::nullptr_t) = delete;
 
-    /** Construct a new PdfString from a 0-terminated string.
+    /** Initialize from a UTF-8 string.
      *
-     *  The input string will be copied.
-     *  if m_Hex is true the copied data will be hex-encoded.
-     *
-     *  \param view the string to copy, must not be nullptr
+     *  \param str the string to initialize from
+     *  \param length length of the string
+     *  \param literal true if the string should be treated as literal
      *
      */
     void initFromUtf8String(const char* str, size_t length, bool literal);

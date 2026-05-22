@@ -39,6 +39,7 @@ public:
     PdfObject* GetContentsObject();
 
     /** Get access an object that you can use to ADD drawing to
+     *  \param flags flags for the contents stream creation
      *  \returns a contents stream object
      */
     virtual PdfObjectStream& GetOrCreateContentsStream(PdfStreamAppendFlags flags) = 0;

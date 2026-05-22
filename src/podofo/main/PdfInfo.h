@@ -113,7 +113,7 @@ public:
     void SetTrapped(nullable<const PdfName&> trapped);
 
     /** Get the trapping state of the document
-     *  \returns the title
+     *  \returns the trapping state
      */
     nullable<const PdfName&> GetTrapped() const;
 
@@ -125,7 +125,7 @@ private:
     void init(PdfInfoInitial initial);
 
     /** Get a value from the info dictionary as name
-     *  \para name the key to fetch from the info dictionary
+     *  \param name the key to fetch from the info dictionary
      *  \return a value from the info dictionary
      */
     nullable<const PdfString&> getStringFromInfoDict(const std::string_view& name) const;

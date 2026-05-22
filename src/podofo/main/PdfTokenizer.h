@@ -146,6 +146,7 @@ protected:
     /** Read a dictionary from the input device
      *  and store it into a variant.
      *
+     *  \param device the input device to read from
      *  \param variant store the dictionary into this variable
      *  \param encrypt an encryption object which is used to decrypt strings during parsing
      */
@@ -154,6 +155,7 @@ protected:
     /** Read an array from the input device
      *  and store it into a variant.
      *
+     *  \param device the input device to read from
      *  \param variant store the array into this variable
      *  \param encrypt an encryption object which is used to decrypt strings during parsing
      */
@@ -162,6 +164,7 @@ protected:
     /** Read a string from the input device
      *  and store it into a variant.
      *
+     *  \param device the input device to read from
      *  \param variant store the string into this variable
      *  \param encrypt an encryption object which is used to decrypt strings during parsing
      */
@@ -170,6 +173,7 @@ protected:
     /** Read a hex string from the input device
      *  and store it into a variant.
      *
+     *  \param device the input device to read from
      *  \param variant store the hex string into this variable
      *  \param encrypt an encryption object which is used to decrypt strings during parsing
      */
@@ -180,6 +184,7 @@ protected:
      *
      *  Throws UnexpectedEOF if there is nothing to read.
      *
+     *  \param device the input device to read from
      *  \param variant store the name into this variable
      */
     void ReadName(InputStreamDevice& device, PdfVariant& variant);

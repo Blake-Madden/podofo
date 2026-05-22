@@ -94,7 +94,6 @@ private:
      *            - AlternatePresentations
      *            - Renditions
      *
-     *  \param create if true the root node is created if it does not exists.
      *  \returns the root node of the tree or nullptr if it does not exists
      */
     PdfObject* getRootNode(const std::string_view& treeName) const;

@@ -292,7 +292,7 @@ public:
     void SetReal(double d);
 
     /** Set the name value of this object
-    *  \param d the name value
+    *  \param name the name value
     *
     *  This will set the dirty flag of this object.
     *  \see IsDirty
@@ -313,11 +313,10 @@ public:
 
     /** Write the complete object to a file.
      *  \param stream write the object to this device
+     *  \param writeMode additional options for writing the object
      *  \param encrypt an encryption object which is used to encrypt this object
      *                  or nullptr to not encrypt this object
-     *  \param writeMode additional options for writing the object
-     *  \param keyStop if not KeyNull and a key == keyStop is found
-     *                 writing will stop right before this key!
+     *  \param buffer a buffer to be used for formatting
      */
     void Write(OutputStream& stream, PdfWriteFlags writeMode,
         const PdfStatefulEncrypt* encrypt, charbuff& buffer) const;
